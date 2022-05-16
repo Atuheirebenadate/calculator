@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
     lateinit var edText:EditText
@@ -12,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var btnMinus:Button
     lateinit var btnModel:Button
     lateinit var btnMult:Button
-    lateinit var tvResult:Button
+    lateinit var tvResult:TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -25,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         tvResult=findViewById(R.id.tvResult)
 
           btnBmi.setOnClickListener {
+              tvResult . text = ""
             var number=edText.text.toString() .toInt()
             var numb =edOut.text.toString() .toInt()
             getResult(number,numb)
@@ -51,20 +53,20 @@ class MainActivity : AppCompatActivity() {
 
     fun getResult(number:Int,numb:Int){
         var result=number+numb
-        tvResult.text.toString()
+        tvResult.text = result.toString()
 
     }
 fun getResult2(number: Int,numb: Int){
 var result =number/numb
-    tvResult.text.toString()
+    tvResult.text = result.toString()
 }
     fun getResult3(number: Int,numb: Int){
         var result =number%numb
-        tvResult.text.toString()
+        tvResult.text = result.toString()
     }
     fun getResult4(number: Int,numb: Int){
         var result =number*numb
-        tvResult.text.toString()
+        tvResult.text = result.toString()
     }
 
 }
